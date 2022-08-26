@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: icastell <icastell@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/26 12:49:10 by icastell          #+#    #+#             */
-/*   Updated: 2022/08/26 20:10:32 by icastell         ###   ########.fr       */
+/*   Created: 2022/08/26 19:22:08 by icastell          #+#    #+#             */
+/*   Updated: 2022/08/26 20:15:49 by icastell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef SCAV_TRAP_HPP
+# define SCAV_TRAP_HPP
+
 #include "ClapTrap.hpp"
 
-int main(void)
+class ScavTrap : public ClapTrap
 {
-	ClapTrap	I("IRANZU");
+	public:
+		ScavTrap(void);
+		ScavTrap(std::string name);
+		ScavTrap (const ScavTrap &old_ScavTrap);
+		ScavTrap& operator = (ScavTrap const &old_ScavTrap);
+		~ScavTrap();
 
-	I.attack("IDOYA");
-	I.takeDamage(7);
-	I.beRepaired(4);
-	I.takeDamage(3);
-	I.beRepaired(8);
-	I.takeDamage(12);
-	return (0);
-}
+		void attack(std::string const &target);
+		void guardGate(void);
+};
+
+#endif

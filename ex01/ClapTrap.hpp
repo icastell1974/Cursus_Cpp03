@@ -6,7 +6,7 @@
 /*   By: icastell <icastell@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 11:32:43 by icastell          #+#    #+#             */
-/*   Updated: 2022/08/26 19:25:23 by icastell         ###   ########.fr       */
+/*   Updated: 2022/08/26 19:39:21 by icastell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 class ClapTrap
 {
-	private:
+	protected:
 		std::string	name;
 		int			Hitpoints;
 		int			Energy_points;

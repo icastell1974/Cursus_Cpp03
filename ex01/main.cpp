@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: icastell <icastell@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/26 12:49:10 by icastell          #+#    #+#             */
-/*   Updated: 2022/08/26 20:10:32 by icastell         ###   ########.fr       */
+/*   Created: 2022/08/26 20:00:39 by icastell          #+#    #+#             */
+/*   Updated: 2022/08/26 20:16:09 by icastell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main(void)
 {
@@ -21,6 +21,14 @@ int main(void)
 	I.beRepaired(4);
 	I.takeDamage(3);
 	I.beRepaired(8);
-	I.takeDamage(12);
+
+	ScavTrap	A("AMAYA");
+
+	A.attack("MAITE");
+	A.takeDamage(7);
+	A.beRepaired(4);
+	A.takeDamage(3);
+	A.beRepaired(8);
+	A.guardGate();
 	return (0);
 }
