@@ -1,0 +1,5 @@
+.DS_Store
+.vscode
+*.o
+*.dSYM
+ex00/ClapTrap
