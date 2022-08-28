@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: icastell <icastell@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/26 20:00:39 by icastell          #+#    #+#             */
-/*   Updated: 2022/08/28 10:43:56 by icastell         ###   ########.fr       */
+/*   Created: 2022/08/26 19:22:08 by icastell          #+#    #+#             */
+/*   Updated: 2022/08/26 20:15:49 by icastell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#ifndef SCAV_TRAP_HPP
+# define SCAV_TRAP_HPP
 
-int main(void)
+#include "ClapTrap.hpp"
+
+class ScavTrap : public ClapTrap
 {
-	ClapTrap	I("IRANZU");
+	public:
+		ScavTrap(void);
+		ScavTrap(std::string name);
+		ScavTrap (const ScavTrap &old_ScavTrap);
+		ScavTrap& operator = (ScavTrap const &old_ScavTrap);
+		~ScavTrap();
 
-	I.attack("IDOYA");
-	I.takeDamage(7);
-	I.beRepaired(4);
-	I.takeDamage(3);
-	I.beRepaired(8);
+		void attack(std::string const &target);
+		void guardGate(void);
+};
 
-	ScavTrap	A("AMAYA");
-
-	A.attack("IDOYA");
-	A.takeDamage(7);
-	A.beRepaired(4);
-	A.takeDamage(3);
-	A.beRepaired(8);
-	A.guardGate();
-	return (0);
-}
+#endif

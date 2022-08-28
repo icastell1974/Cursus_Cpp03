@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: icastell <icastell@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/26 20:00:39 by icastell          #+#    #+#             */
-/*   Updated: 2022/08/28 10:43:56 by icastell         ###   ########.fr       */
+/*   Created: 2022/08/28 10:04:43 by icastell          #+#    #+#             */
+/*   Updated: 2022/08/28 10:11:07 by icastell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#ifndef FRAG_TRAP_HPP
+# define FRAG_TRAP_HPP
 
-int main(void)
+#include "ClapTrap.hpp"
+
+class FragTrap : public ClapTrap
 {
-	ClapTrap	I("IRANZU");
+	public:
+		FragTrap(void);
+		FragTrap(std::string name);
+		FragTrap (const FragTrap &old_FragTrap);
+		FragTrap& operator = (FragTrap const &old_FragTrap);
+		~FragTrap();
 
-	I.attack("IDOYA");
-	I.takeDamage(7);
-	I.beRepaired(4);
-	I.takeDamage(3);
-	I.beRepaired(8);
+		void highFivesGuys(void);
+};
 
-	ScavTrap	A("AMAYA");
-
-	A.attack("IDOYA");
-	A.takeDamage(7);
-	A.beRepaired(4);
-	A.takeDamage(3);
-	A.beRepaired(8);
-	A.guardGate();
-	return (0);
-}
+#endif

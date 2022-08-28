@@ -5,17 +5,18 @@
 #                                                     +:+ +:+         +:+      #
 #    By: icastell <icastell@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/08/26 18:22:32 by icastell          #+#    #+#              #
-#    Updated: 2022/08/28 10:00:04 by icastell         ###   ########.fr        #
+#    Created: 2022/08/28 10:03:04 by icastell          #+#    #+#              #
+#    Updated: 2022/08/28 10:04:29 by icastell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	ScavTrap
+NAME		=	FragTrap
 CXX			=	clang++
 CXXFLAGS	=	-Wall -Werror -Wextra -std=c++98 -pedantic
 SRCS		=	main.cpp\
 				ClapTrap.cpp\
 				ScavTrap.cpp\
+				FragTrap.cpp\
 				
 OBJS		:=	$(SRCS:.cpp=.o)
 

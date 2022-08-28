@@ -3,4 +3,5 @@
 *.o
 *.dSYM
 ex00/ClapTrap
-ex01/Serena
+ex01/ScavTrap
+ex02/FragTrap
