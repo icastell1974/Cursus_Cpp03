@@ -6,7 +6,7 @@
 /*   By: icastell <icastell@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/28 10:03:37 by icastell          #+#    #+#             */
-/*   Updated: 2022/08/28 10:21:19 by icastell         ###   ########.fr       */
+/*   Updated: 2022/08/29 12:36:35 by icastell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 int main(void)
 {
+	std::cout << "ClapTrap:" << std::endl;
+	
 	ClapTrap	I("IRANZU");
 
 	I.attack("IDOYA");
@@ -23,6 +25,8 @@ int main(void)
 	I.takeDamage(3);
 	I.beRepaired(8);
 
+	std::cout << "ScavTrap:" << std::endl;
+	
 	ScavTrap	A("AMAYA");
 
 	A.attack("IDOYA");
@@ -32,6 +36,8 @@ int main(void)
 	A.beRepaired(8);
 	A.guardGate();
 
+	std::cout << "FragTrap:" << std::endl;
+	
 	FragTrap	M("MAITE");
 
 	M.attack("IDOYA");
