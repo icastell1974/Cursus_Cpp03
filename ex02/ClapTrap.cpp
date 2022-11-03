@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: icastell <icastell@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: icastell <icastell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 11:40:57 by icastell          #+#    #+#             */
-/*   Updated: 2022/08/26 14:00:03 by icastell         ###   ########.fr       */
+/*   Updated: 2022/11/03 16:22:39 by icastell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,9 @@ void ClapTrap::takeDamage(unsigned int amount)
 {
 	this->Energy_points -= amount;
 	if (this->Energy_points <= 0)
-		std::cout << "ClapTrap " << this->getName() << " is dead" << std::endl;
+		std::cout << this->getName() << " is dead" << std::endl;
 	else
-		std::cout << "ClapTrap " << this->getName() << " has been damaged "
+		std::cout << this->getName() << " has been damaged "
 				<< "and now it has " << this->getEnergyPoints()
 				<< " energy points" << std::endl;
 }
@@ -84,7 +84,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 void	ClapTrap::beRepaired(unsigned int amount)
 {
 	this->Energy_points += amount;
-	std::cout << "ClapTrap " << this->getName() << " has been repaired "
+	std::cout << this->getName() << " has been repaired "
 			<<"and now it has " << this->getEnergyPoints()
 			<<" energy points" << std::endl;
 }

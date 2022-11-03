@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: icastell <icastell@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: icastell <icastell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 20:00:39 by icastell          #+#    #+#             */
-/*   Updated: 2022/11/03 10:56:19 by icastell         ###   ########.fr       */
+/*   Updated: 2022/11/03 16:09:09 by icastell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@ int main(void)
 	
 	ClapTrap	I("IRANZU");
 
+	std::cout << I.getName() << " has got " << I.getHitPoints() << " HIT POINTS, "
+		<< I.getEnergyPoints() << " ENERGY POINTS, and " << I.getAttackDamage()
+		<< " ATTACK DAMAGE" << std::endl;
+	
 	I.attack("IDOYA");
 	I.takeDamage(7);
 	I.beRepaired(4);
@@ -27,6 +31,10 @@ int main(void)
 	std::cout << "ScavTrap:" << std::endl;
 	
 	ScavTrap	A("AMAYA");
+
+	std::cout << A.getName() << " has got " << A.getHitPoints() << " HIT POINTS, "
+		<< A.getEnergyPoints() << " ENERGY POINTS and " << A.getAttackDamage()
+		<< " ATTACK DAMAGE" << std::endl;
 
 	A.attack("IDOYA");
 	A.takeDamage(7);

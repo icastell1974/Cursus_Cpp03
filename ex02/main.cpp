@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: icastell <icastell@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: icastell <icastell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/28 10:03:37 by icastell          #+#    #+#             */
-/*   Updated: 2022/08/29 12:36:35 by icastell         ###   ########.fr       */
+/*   Updated: 2022/11/03 17:05:35 by icastell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,23 @@ int main(void)
 	
 	ClapTrap	I("IRANZU");
 
+	std::cout << I.getName() << " has got " << I.getHitPoints() << " HIT POINTS, "
+		<< I.getEnergyPoints() << " ENERGY POINTS and " << I.getAttackDamage()
+		<< " ATTACK DAMAGE" << std::endl;
+
 	I.attack("IDOYA");
 	I.takeDamage(7);
 	I.beRepaired(4);
 	I.takeDamage(3);
-	I.beRepaired(8);
+	I.beRepaired(28);
 
 	std::cout << "ScavTrap:" << std::endl;
 	
 	ScavTrap	A("AMAYA");
+
+	std::cout << A.getName() << " has got " << A.getHitPoints() << " HIT POINTS, "
+		<< A.getEnergyPoints() << " ENERGY POINTS and " << A.getAttackDamage()
+		<< " ATTACK DAMAGE" << std::endl;
 
 	A.attack("IDOYA");
 	A.takeDamage(7);
@@ -36,9 +44,16 @@ int main(void)
 	A.beRepaired(8);
 	A.guardGate();
 
+	A.attack(I.getName());
+	I.takeDamage(A.getAttackDamage());
+
 	std::cout << "FragTrap:" << std::endl;
 	
 	FragTrap	M("MAITE");
+
+	std::cout << M.getName() << " has got " << M.getHitPoints() << " HIT POINTS, "
+		<< M.getEnergyPoints() << " ENERGY POINTS and " << M.getAttackDamage()
+		<< " ATTACK DAMAGE" << std::endl;
 
 	M.attack("IDOYA");
 	M.takeDamage(7);
@@ -46,5 +61,8 @@ int main(void)
 	M.takeDamage(3);
 	M.beRepaired(8);
 	M.highFivesGuys();
+
+	M.attack(A.getName());
+	A.takeDamage(M.getAttackDamage());
 	return (0);
 }

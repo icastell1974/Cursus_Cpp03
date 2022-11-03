@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: icastell <icastell@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: icastell <icastell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 12:49:10 by icastell          #+#    #+#             */
-/*   Updated: 2022/08/26 20:10:32 by icastell         ###   ########.fr       */
+/*   Updated: 2022/11/03 16:09:16 by icastell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,10 @@ int main(void)
 {
 	ClapTrap	I("IRANZU");
 
+	std::cout << I.getName() << " has got " << I.getHitPoints() << " HIT POINTS, "
+		<< I.getEnergyPoints() << " ENERGY POINTS and " << I.getAttackDamage()
+		<< " ATTACK DAMAGE" << std::endl;
+	
 	I.attack("IDOYA");
 	I.takeDamage(7);
 	I.beRepaired(4);
