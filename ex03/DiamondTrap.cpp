@@ -3,31 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: icastell <icastell@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: icastell <icastell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 10:28:14 by icastell          #+#    #+#             */
-/*   Updated: 2022/08/29 11:15:06 by icastell         ###   ########.fr       */
+/*   Updated: 2022/11/03 17:38:51 by icastell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap()//: ClapTrap("") 
+DiamondTrap::DiamondTrap()
 {
 	std::cout << "DiamondTrap default constructor called" << std::endl;
-	/*this->Hitpoints = 100;
-	this->Energy_points = 100;
-	this->Attack_damage = 30;*/
+	this->name = "";
+    this->ClapTrap::name = this->name + "_clap_name";
+    this->FragTrap::Hitpoints = 100;
+    this->ScavTrap::Energy_points = 50;
+    this->FragTrap::Attack_damage = 30;
 }
 
 DiamondTrap::DiamondTrap(std::string name)
 {
 	std::cout << "DiamondTrap name constructor called" << std::endl;
 	this->name = name;
-	ClapTrap::name = name + "_clap_name";
-	this->Hitpoints = FragTrap::getHitPoints(); 		//this->Hitpoints = FragTrap::Hitpoints;
-	this->Energy_points = ScavTrap::getEnergyPoints();	//this->Energy_points = ScavTrap::Energy_points;
-	this->Attack_damage = FragTrap::getAttackDamage();	//this->Attack_damage = FragTrap::Attack_damage;
+	this->ClapTrap::name = name + "_clap_name";
+    this->FragTrap::Hitpoints = 100;
+    this->ScavTrap::Energy_points = 50;
+    this->FragTrap::Attack_damage = 30;
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap &old_DiamondTrap): ClapTrap(old_DiamondTrap)
