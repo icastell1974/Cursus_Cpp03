@@ -6,7 +6,7 @@
 /*   By: icastell <icastell@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 20:00:39 by icastell          #+#    #+#             */
-/*   Updated: 2022/08/29 12:37:08 by icastell         ###   ########.fr       */
+/*   Updated: 2022/11/03 10:56:19 by icastell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main(void)
 	I.takeDamage(7);
 	I.beRepaired(4);
 	I.takeDamage(3);
-	I.beRepaired(8);
+	I.beRepaired(28);
 
 	std::cout << "ScavTrap:" << std::endl;
 	
@@ -34,5 +34,8 @@ int main(void)
 	A.takeDamage(3);
 	A.beRepaired(8);
 	A.guardGate();
+
+	A.attack(I.getName());
+	I.takeDamage(A.getAttackDamage());
 	return (0);
 }
