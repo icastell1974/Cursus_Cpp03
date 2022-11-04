@@ -6,7 +6,7 @@
 /*   By: icastell <icastell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 10:28:14 by icastell          #+#    #+#             */
-/*   Updated: 2022/11/03 17:38:51 by icastell         ###   ########.fr       */
+/*   Updated: 2022/11/04 10:13:58 by icastell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,20 +32,27 @@ DiamondTrap::DiamondTrap(std::string name)
     this->FragTrap::Attack_damage = 30;
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap &old_DiamondTrap): ClapTrap(old_DiamondTrap)
+DiamondTrap::DiamondTrap(const DiamondTrap &old_DiamondTrap) : name(old_DiamondTrap.getName())
 {
-	std::cout << "DiamondTrap copy constructor called" << std::endl;
-	*this = old_DiamondTrap;
+    std::cout << "DiamondTrap copy constructor called" << std::endl;
+	this->ClapTrap::name = old_DiamondTrap.getName();
+    this->FragTrap::Hitpoints = old_DiamondTrap.getHitPoints();
+    this->ScavTrap::Energy_points = old_DiamondTrap.getEnergyPoints();
+    this->FragTrap::Attack_damage = old_DiamondTrap.getAttackDamage();
+    std::cout << "DiamondTrap copy constructor is called" << std::endl;
 }
 
 DiamondTrap& DiamondTrap::operator = (DiamondTrap const &old_DiamondTrap)
 {
-	std::cout << "Assignation operator called" << std::endl;
-	this->name = old_DiamondTrap.getName();
-	this->Hitpoints = old_DiamondTrap.getHitPoints();
-	this->Energy_points = old_DiamondTrap.getEnergyPoints();
-	this->Attack_damage = old_DiamondTrap.getAttackDamage();
-	return (*this);
+    if (this != &old_DiamondTrap)
+    {
+        this->name = old_DiamondTrap.getName();
+        this->ClapTrap::name = old_DiamondTrap.getName() + "_clap_name";
+        this->FragTrap::Hitpoints = old_DiamondTrap.getHitPoints();
+        this->ScavTrap::Energy_points = old_DiamondTrap.getEnergyPoints();
+        this->FragTrap::Attack_damage = old_DiamondTrap.getAttackDamage();
+    }
+    return (*this);
 }
 
 DiamondTrap::~DiamondTrap(void)
